@@ -16,7 +16,7 @@ public class ListaDeTarefas {
 
     public ListaDeTarefas(String time, int MAX_TAREFAS) {
         this.time = time;
-        this.tarefas = new ArrayList<>(); //inicalizando a lista de tarefas do tipo Array
+        this.tarefas = new ArrayList<>(); //definindo as tarefas como a Arraylist
         this.posicaoAtual = 0; //iniciando a posição em 0
         this.MAX_TAREFAS = MAX_TAREFAS;
     }
@@ -43,11 +43,38 @@ public class ListaDeTarefas {
     }
 
     private void exibirMensagem() {
-        String posicao = POSICOES[posicaoAtual];
+        String posicao = POSICOES[posicaoAtual];//obtem a posição do usuario 
         System.out.println("Você subiu para " + posicao + "!");
     }
 
     private void exibirImagem() {
-        System.out.println("Imagem da posição " + POSICOES[posicaoAtual]);
+        String posicao = POSICOES[posicaoAtual]; //obtem a posição do usuario 
+        String imagem = "imagem_padrao.jpg";
+
+        switch (posicao) {
+            case "P1":
+              imagem = "imagem_p1.jpg";
+              break;
+            case "P2":
+              imagem = "imagem_p2.jpg";
+              break;
+            case "P3":
+              imagem = "imagem_p3.jpg";
+              break;
+            case "P4":
+              imagem = "imagem_p4.jpg";
+              break;
+            case "P5":
+              imagem = "imagem_p5.jgp";
+              break;
+            case "P6":
+              imagem = "imagem_p6.jpg";
+            default:
+              System.out.println("Opção não existente! ");
+              imagem = "imagem_padrao.jpg";
+              break;
+        }
+
+        System.out.println("Imagem da posição " + posicao + ":" + imagem);
     }
 }

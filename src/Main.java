@@ -14,32 +14,37 @@ public class Main {
        int opcaoTime = scanner.nextInt();
        //lendo a escolha do usuario 
 
-       String time = ""; //evitando erro de inicialização da variavel time 
+       String equipes = ""; //evitando erro de inicialização da variavel time 
 
+       //switch cases para escolha de equipe
        switch (opcaoTime) {
         case 1:
-          time = "Mercedes";
+          equipes = "Mercedes";
           break;
         case 2:
-          time = "Ferrari";
+          equipes = "Ferrari";
           break;
         case 3:
-          time = "Aston Martin";
+          equipes = "Aston Martin";
           break;
         default:
           System.out.println("Opção inválida!");
           break;
        }
 
-       ListaDeTarefas listaDeTarefas = new ListaDeTarefas(time, MAX_TAREFAS);
+       ListaDeTarefas listaDeTarefas = new ListaDeTarefas(equipes, MAX_TAREFAS);
+       //inicializando uma lista de tarefas levando em conta o time e o max de tarefas 
 
        scanner.nextLine(); //limpando buffer do scanner
 
       
       for (int i = 0; i < MAX_TAREFAS; i++) {
+      //o loop continua enquanto o numero de tarefas for menor que 6 
         System.out.println("Digite uma tarefa " + (i + 1) + ":" );
+        //pede para o usuario inserir uma tarefa e começa a contagem
         String tarefa = scanner.nextLine();
-        listaDeTarefas.adicionarTarefa(tarefa);
+        //lê a proxima linha 
+        listaDeTarefas.adicionarTarefa(tarefa); //adiciona a tarefa a lista de array
        }
 
        scanner.close();
